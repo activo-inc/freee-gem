@@ -15,7 +15,7 @@ Freee.includes(__FILE__, 'freee/obj/*')
 module Freee
   OPTIONS = {
     site: 'https://api.freee.co.jp',
-    authorize_url: '/oauth/authorize',
-    token_url: '/oauth/token'
+    authorize_url: 'https://accounts.secure.freee.co.jp/public_api/authorize',
+    token_url: 'https://accounts.secure.freee.co.jp/public_api/token',
   }
 end
