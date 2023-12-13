@@ -7,5 +7,9 @@ module Freee
 
       client.post('/iv/invoices', :invoice, params)
     end
+
+    def self.find(id, company_id)
+      Freee.client.get("/iv/invoices/#{id}?company_id=#{company_id}", :invoice)
+    end
   end
 end
