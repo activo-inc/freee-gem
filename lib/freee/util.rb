@@ -26,9 +26,9 @@ module Freee
         con.adapter Faraday.default_adapter
       end
     end
-    
+
     def self.create_token(**kwarg)
-      self.create_client(kwarg) if @@client.nil?
+      self.create_client(**kwarg) if @@client.nil?
       get_token = @@client.get_token(create_params(kwarg))
       {
         token: get_token.token,
@@ -37,7 +37,7 @@ module Freee
     end
 
     def self.refresh_token(**kwarg)
-      self.create_client(kwarg) if @@client.nil?
+      self.create_client(**kwarg) if @@client.nil?
       get_token = OAuth2::AccessToken.from_hash(
         @@client,
         refresh_token: kwarg[:refresh_token]
