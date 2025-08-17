@@ -1,6 +1,5 @@
 require 'oauth2'
 require 'faraday'
-require 'faraday_middleware'
 require 'httpauth'
 require 'thor'
 
